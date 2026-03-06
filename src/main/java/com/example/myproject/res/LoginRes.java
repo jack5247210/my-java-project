@@ -4,18 +4,22 @@ public class LoginRes extends BasicRes {
     
 	private boolean admin;  // 是否為管理員
     private String userphone; // 可選，如果需要前端顯示
+    private String name;
 
     public LoginRes(int code, String message) {
         super(code, message);
     }
 
-    public LoginRes(int code, String message, boolean admin, String userphone) {
-        super(code, message);
-        this.admin = admin;
-        this.userphone = userphone;
-    }
+    
 
-    public boolean isAdmin() {
+    public LoginRes(int code, String message, boolean admin, String userphone, String name) {
+		super(code, message);
+		this.admin = admin;
+		this.userphone = userphone;
+		this.name = name;
+	}
+
+	public boolean isAdmin() {
         return admin;
     }
 
@@ -30,4 +34,14 @@ public class LoginRes extends BasicRes {
     public void setUserphone(String userphone) {
         this.userphone = userphone;
     }
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+    
+    
 }

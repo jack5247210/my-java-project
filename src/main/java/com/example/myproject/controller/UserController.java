@@ -40,6 +40,7 @@ public class UserController {
 	    if (res.getCode() == ReplyMessage.SUCCESS.getCode()) {
 	        session.setAttribute("userphone", res.getUserphone());
 	        session.setAttribute("isAdmin", res.isAdmin());
+	        session.setAttribute("name", res.getName());
 	    }
 	    return res;
 	}

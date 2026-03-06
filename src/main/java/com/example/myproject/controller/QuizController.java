@@ -26,6 +26,10 @@ import jakarta.validation.Valid;
 
 @RestController
 //@RequestMapping("/api/quiz")最好有，沒有也沒關係
+<<<<<<< HEAD
+=======
+@CrossOrigin(origins = "http://localhost:4200")//如果前端用到session，跨網域，可能加上沒效果，後續再講
+>>>>>>> 0b2ef2acfabdb40920cf57b1821232bbf523d8ff
 public class QuizController {
 	@Autowired
 	private QuizService quizService;

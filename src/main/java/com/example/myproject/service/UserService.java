@@ -53,6 +53,7 @@ public class UserService {
         }
 
         // 5. 比對密碼（明碼 vs 資料庫加密密碼）
+<<<<<<< HEAD
 //        boolean isMatch = encoder.matches(req.getPassword(), user.getPassword());
 //        if (!isMatch) {
 //            return new LoginRes(
@@ -61,6 +62,16 @@ public class UserService {
 //                false, null
 //            );
 //        }
+=======
+        boolean isMatch = encoder.matches(req.getPassword(), user.getPassword());
+        if (!isMatch) {
+            return new LoginRes(
+                ReplyMessage.USER_PASSWORD_ERROR.getCode(),
+                ReplyMessage.USER_PASSWORD_ERROR.getMessage(),
+                false, null
+            );
+        }
+>>>>>>> 0b2ef2acfabdb40920cf57b1821232bbf523d8ff
 
         // 7. 登入成功
      // 成功時回傳 LoginRes，帶入真實的管理員狀態與手機號碼
