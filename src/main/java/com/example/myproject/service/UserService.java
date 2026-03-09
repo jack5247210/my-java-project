@@ -48,12 +48,13 @@ public class UserService {
                 ReplyMessage.USER_NOT_FOUND.getCode(),
                 ReplyMessage.USER_NOT_FOUND.getMessage(),
                 false,  // admin 預設 false
-                null    // 手機號碼 null
+                null ,   // 手機號碼 null
+                null
             );
         }
 
         // 5. 比對密碼（明碼 vs 資料庫加密密碼）
-<<<<<<< HEAD
+
 //        boolean isMatch = encoder.matches(req.getPassword(), user.getPassword());
 //        if (!isMatch) {
 //            return new LoginRes(
@@ -62,16 +63,16 @@ public class UserService {
 //                false, null
 //            );
 //        }
-=======
+
         boolean isMatch = encoder.matches(req.getPassword(), user.getPassword());
         if (!isMatch) {
             return new LoginRes(
                 ReplyMessage.USER_PASSWORD_ERROR.getCode(),
                 ReplyMessage.USER_PASSWORD_ERROR.getMessage(),
-                false, null
+                false, null, null
             );
         }
->>>>>>> 0b2ef2acfabdb40920cf57b1821232bbf523d8ff
+
 
         // 7. 登入成功
      // 成功時回傳 LoginRes，帶入真實的管理員狀態與手機號碼
@@ -79,7 +80,8 @@ public class UserService {
             ReplyMessage.SUCCESS.getCode(),
             ReplyMessage.SUCCESS.getMessage(),
             user.isAdmin(),         // 從資料庫取得
-            user.getUserphone()
+            user.getUserphone(),
+            user.getName()
         );
     }
 

@@ -26,4 +26,6 @@ public interface FillinDao extends JpaRepository<Fillin, FillinId>{
 	
 	@Query(value = "select * from fillin where quiz_Id = ?1 and user_phone = ?2", nativeQuery = true)
 	public List<Fillin> getByQuizIdAndUserphone(int quizId, String uesrphone);// 補上
+
+	
 }
